@@ -1,110 +1,127 @@
 <script>
-  import { fly } from 'svelte/transition';
-  import { quartInOut, cubicOut } from 'svelte/easing';
-  import { onMount } from 'svelte';
+  import Keyboard from '$lib/Keyboard.svelte';
+  import { typewriter } from '$lib';
+  import { afterUpdate, tick } from 'svelte';
+  import { fade } from 'svelte/transition';
 
-  let textTransition = false;
-  let socialsTransition = false;
+  let startTypewriter = false;
+  let keyPress = '';
+  let spoiler = true;
 
-  onMount(() => {
-    const textTransitionDelay = setTimeout(() => {
-      textTransition = true;
-    }, 200);
+  /** @type {HTMLElement | null} */
+  let typewriterOverlay = null;
 
-    const socialsTransitionDelay = setTimeout(() => {
-      socialsTransition = true;
-    }, 1700);
+  /** @type {HTMLElement | null} */
+  let backgroundText = null;
 
-    return () => {
-      clearTimeout(textTransitionDelay);
-      clearTimeout(socialsTransitionDelay);
-    };
+  const stopTypewriting = () => {
+    startTypewriter = false;
+    keyPress = '';
+  };
+
+  afterUpdate(async () => {
+    await tick();
+
+    const config = { attributes: true, childList: true, subtree: true };
+    const observer = new MutationObserver(() => {
+      if (typewriterOverlay && backgroundText) {
+        keyPress = typewriterOverlay.textContent?.at(-1) ?? '';
+        spoiler = false;
+
+        if (typewriterOverlay.textContent?.length === backgroundText.textContent?.length) {
+          stopTypewriting();
+        }
+      }
+    });
+
+    if (typewriterOverlay) {
+      observer.observe(typewriterOverlay, config);
+    }
+
+    return () => observer.disconnect();
   });
 </script>
 
-<div class="container relative mx-auto flex h-full max-w-screen-xl items-center justify-center">
-  {#if textTransition}
-    <div class="space-y-4 rounded-xl px-12 py-10 text-center">
-      <div class="relative">
-        <h1
-          in:fly={{ delay: 400, opacity: 0, y: -10, duration: 800, easing: cubicOut }}
-          class="font-lexend text-7xl font-bold tracking-tight text-indigo-800 drop-shadow-md"
+<section class="relative flex flex-col items-center">
+  <article class="max-w-xl leading-relaxed text-slate-700 dark:text-slate-300">
+    <h2 class="mb-4 text-xl font-semibold dark:text-slate-200">About</h2>
+    <p class="mb-4">
+      In my younger years, around the age of 10, I stumbled into the world of computers. I vividly
+      remember my first time navigating the web and my first time playing around with an HTML page.
+    </p>
+
+    <div class="mb-2 inline-block">
+      Nowadays, I work as a
+      <div class="relative inline">
+        <span
+          bind:this={backgroundText}
+          class="font-medium opacity-30 hover:text-indigo-600 dark:hover:text-indigo-300"
+          >Frontend Developer</span
         >
-          Mihai Gabriel
-        </h1>
-        <h1
-          class="font-lexend absolute top-1 -z-10 w-full text-7xl font-bold tracking-tight text-yellow-300"
-        >
-          Mihai Gabriel
-        </h1>
+        <div class="absolute -top-0.5 left-0">
+          {#if startTypewriter}
+            <span
+              bind:this={typewriterOverlay}
+              class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300"
+              in:typewriter
+            >
+              Frontend Developer
+            </span>
+          {:else}
+            <span
+              class="select-none font-medium {spoiler
+                ? 'dark:bg-indigo-400 dark:text-indigo-400'
+                : ''}"
+              class:bg-indigo-800={spoiler}
+              class:text-indigo-800={spoiler}
+            >
+              Frontend Developer
+            </span>
+          {/if}
+        </div>
       </div>
-      <h2
-        in:fly={{ delay: 900, opacity: 0, y: 10, duration: 600, easing: cubicOut }}
-        class="font-space text-4xl tracking-tight"
+      and my main focus is developing
+      <span class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300"
+        >complex UI elements</span
+      >, implementing
+      <span class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300"
+        >business logic</span
       >
-        Frontend Developer
-      </h2>
+      and be a
+      <span class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300">team member</span>.
     </div>
-  {/if}
-
-  {#if socialsTransition}
-    <div
-      in:fly={{ delay: 200, duration: 900, easing: quartInOut, opacity: 0 }}
-      class="absolute bottom-0 flex flex-row space-x-8 py-10"
-    >
-      <a
-        class="block text-slate-900 hover:text-slate-500"
-        href="https://github.com/mihai-gabriel"
-        target="_blank"
-      >
-        <span class="sr-only">Github</span>
+    {#if startTypewriter}
+      <button class="flex items-center gap-2" on:click={stopTypewriting}>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 496 512"
-          class="h-8 w-8"
-          fill="currentColor"
-        >
-          <path
-            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-          />
-        </svg>
-      </a>
-
-      <a
-        class="block text-slate-900 hover:text-slate-500"
-        href="https://www.linkedin.com/in/mihai-sucaliuc/"
-        target="_blank"
-      >
-        <span class="sr-only">Linkedin</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 512"
-          class="h-8 w-8"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
           fill="currentColor"
         >
           <path
-            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+            d="M448 95.1v320c0 35.35-28.65 64-64 64H64c-35.35 0-64-28.65-64-64v-320c0-35.35 28.65-63.1 64-63.1h320C419.3 31.1 448 60.65 448 95.1z"
           />
         </svg>
-      </a>
-
-      <a
-        class="block text-slate-900 hover:text-slate-500"
-        href="https://mihai-sucaliuc.gitbook.io/"
-        target="_blank"
-      >
-        <span class="sr-only">Gitbook</span>
+        Stop
+      </button>
+    {:else}
+      <button class="flex items-center gap-2" on:click={() => (startTypewriter = true)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 32 30"
-          class="h-8 w-8"
+          viewBox="0 0 384 512"
+          class="h-4 w-4 text-indigo-700 dark:text-indigo-400"
           fill="currentColor"
         >
           <path
-            d="M13.478 15.34c1.564.904 2.347 1.355 3.206 1.356.859 0 1.642-.45 3.208-1.35l9.983-5.738a1.452 1.452 0 0 0 0-2.519l-9.987-5.74C18.324.449 17.542-.001 16.683 0c-.858 0-1.64.45-3.204 1.351L4.894 6.295l-.125.072A9.638 9.638 0 0 0 0 14.617v.289a9.639 9.639 0 0 0 4.885 8.316l5.377 3.105c3.134 1.809 4.7 2.714 6.422 2.714 1.72 0 3.288-.903 6.422-2.71l5.677-3.273c1.57-.904 2.355-1.357 2.786-2.103.431-.746.431-1.652.431-3.463v-3.5a1.385 1.385 0 0 0-2.076-1.202l-11.64 6.692c-.782.449-1.172.673-1.6.673-.43 0-.82-.224-1.601-.672l-7.88-4.523c-.394-.226-.591-.34-.75-.36a.803.803 0 0 0-.846.493c-.06.148-.06.376-.057.83.002.336.003.503.034.657.07.345.252.658.517.89.118.103.263.187.553.354l8.424 4.862c.784.452 1.175.678 1.605.678.43 0 .822-.226 1.606-.677l10.325-5.952c.267-.154.401-.231.502-.173.1.058.1.212.1.521v1.588c0 .453 0 .68-.108.866-.108.186-.304.3-.696.525l-8.516 4.91c-1.568.903-2.352 1.355-3.213 1.355-.86 0-1.643-.453-3.21-1.359l-7.968-4.602-.05-.029a5.472 5.472 0 0 1-2.71-4.697v-1.515c0-1.068.568-2.055 1.492-2.59a2.638 2.638 0 0 1 2.641-.003l6.6 3.809Z"
+            d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"
           />
         </svg>
-      </a>
-    </div>
-  {/if}
-</div>
+        Start
+      </button>
+    {/if}
+  </article>
+
+  <div class="mt-4">
+    <Keyboard pressedKey={keyPress} />
+  </div>
+</section>
