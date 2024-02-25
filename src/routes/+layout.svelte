@@ -2,6 +2,6 @@
   import '../app.css';
 </script>
 
-<div class="font-space h-full w-full">
+<div class="font-space h-lvh w-full">
   <slot />
 </div>
