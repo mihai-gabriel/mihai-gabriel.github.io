@@ -25,11 +25,21 @@
 <div class="container relative mx-auto flex h-full max-w-screen-xl items-center justify-center">
   {#if textTransition}
     <div class="space-y-4 rounded-xl px-12 py-10 text-center">
-      <h1 class="font-lexend text-7xl font-bold tracking-tight text-indigo-800 drop-shadow-lg">
-        Mihai Gabriel
-      </h1>
+      <div class="relative">
+        <h1
+          in:fly={{ delay: 400, opacity: 0, y: -10, duration: 800, easing: cubicOut }}
+          class="font-lexend text-7xl font-bold tracking-tight text-indigo-800 drop-shadow-md"
+        >
+          Mihai Gabriel
+        </h1>
+        <h1
+          class="font-lexend absolute top-1 -z-10 w-full text-7xl font-bold tracking-tight text-yellow-300"
+        >
+          Mihai Gabriel
+        </h1>
+      </div>
       <h2
-        in:fly={{ delay: 900, opacity: 0, y: -10, duration: 600, easing: cubicOut }}
+        in:fly={{ delay: 900, opacity: 0, y: 10, duration: 600, easing: cubicOut }}
         class="font-space text-4xl tracking-tight"
       >
         Frontend Developer
