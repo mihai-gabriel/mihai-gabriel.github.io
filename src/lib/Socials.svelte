@@ -46,6 +46,7 @@
     class:hidden={!displayed.includes('gitbook')}
     href="https://blog.mihaigabriel.dev/"
     target="_blank"
+    id="gitbook"
   >
     <span class="sr-only">Gitbook</span>
     <svg

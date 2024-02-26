@@ -19,6 +19,24 @@
     keyPress = '';
   };
 
+  const focusGitBook = () => {
+    const gitBook = document.querySelector('#gitbook');
+
+    if (gitBook) {
+      gitBook.classList.add('text-yellow-500');
+      gitBook.classList.add('dark:text-yellow-300');
+    }
+  };
+
+  const unfocusGitBook = () => {
+    const gitBook = document.querySelector('#gitbook');
+
+    if (gitBook) {
+      gitBook.classList.remove('text-yellow-500');
+      gitBook.classList.remove('dark:text-yellow-300');
+    }
+  };
+
   afterUpdate(async () => {
     await tick();
 
@@ -55,9 +73,10 @@
       <div class="relative inline">
         <span
           bind:this={backgroundText}
-          class="font-medium opacity-30 hover:text-indigo-600 dark:hover:text-indigo-300"
-          >Frontend Developer</span
+          class="font-medium hover:text-indigo-600 md:opacity-30 dark:hover:text-indigo-300"
         >
+          Frontend Developer
+        </span>
         <div class="absolute -top-0.5 left-0">
           {#if startTypewriter}
             <span
@@ -93,7 +112,7 @@
       <span class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300">team member</span>.
     </div>
     {#if startTypewriter}
-      <button class="flex items-center gap-2" on:click={stopTypewriting}>
+      <button class="hidden items-center gap-2 md:flex" on:click={stopTypewriting}>
         <svg
           viewBox="0 0 448 512"
           xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +126,11 @@
         Stop
       </button>
     {:else}
-      <button class="flex items-center gap-2" on:click={() => (startTypewriter = true)}>
+      <button
+        class="hidden items-center gap-2 [animation-iteration-count:2] md:flex"
+        class:animate-pulse={spoiler}
+        on:click={() => (startTypewriter = true)}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 384 512"
@@ -123,7 +146,38 @@
     {/if}
   </article>
 
-  <div class="mt-4">
+  <div class="my-4">
     <Keyboard pressedKey={keyPress} />
   </div>
+
+  <article class="mt-4 w-full max-w-xl">
+    <p class="flex items-center gap-1">
+      Check out my
+      <a
+        href="https://blog.mihaigabriel.dev/"
+        target="_blank"
+        class="group flex items-center gap-1 text-indigo-500 hover:text-yellow-500 focus:text-yellow-500 dark:text-indigo-300 dark:hover:text-yellow-300 dark:focus:text-yellow-300"
+        on:mouseenter={focusGitBook}
+        on:focusin={focusGitBook}
+        on:focusout={unfocusGitBook}
+        on:mouseleave={unfocusGitBook}
+      >
+        blog articles
+        <svg
+          class="h-4 w-4 transition-transform group-hover:translate-x-1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+          <polyline points="15 3 21 3 21 9" />
+          <line x1="10" y1="14" x2="21" y2="3" />
+        </svg>
+      </a>
+    </p>
+  </article>
 </section>

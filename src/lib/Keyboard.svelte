@@ -62,7 +62,7 @@
   export let pressedKey = '';
 </script>
 
-<div class="flex select-none flex-col space-y-1">
+<div class="hidden select-none flex-col space-y-1 md:flex">
   {#each keymaps as keymap}
     <div class="flex flex-row space-x-1">
       {#each keymap as key}
