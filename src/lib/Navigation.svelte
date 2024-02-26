@@ -4,7 +4,7 @@
 
 <nav>
   <ul
-    class="mt-16 hidden space-y-8 font-lexend text-sm font-semibold uppercase text-slate-700 md:block lg:text-lg xl:text-xl dark:text-slate-100"
+    class="mt-16 hidden font-lexend text-sm font-semibold uppercase text-slate-700 md:block md:space-y-4 lg:space-y-6 lg:text-lg xl:space-y-8 xl:text-xl dark:text-slate-100"
   >
     <li class="decoration-2 underline-offset-8">
       <a

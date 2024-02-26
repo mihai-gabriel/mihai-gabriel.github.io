@@ -7,7 +7,9 @@
   import MobileNavigation from '$lib/MobileNavigation.svelte';
 </script>
 
-<div class="-z-10 h-lvh w-full font-space dark:bg-slate-800">
+<div
+  class="-z-10 min-h-lvh w-full pb-5 font-space selection:bg-zinc-300 dark:bg-slate-800 dark:selection:bg-zinc-500"
+>
   <div
     class="container relative z-0 mx-auto flex h-full max-w-screen-xl flex-col px-6 py-4 md:py-20"
   >

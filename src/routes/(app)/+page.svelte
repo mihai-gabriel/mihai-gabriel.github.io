@@ -3,6 +3,7 @@
   import { typewriter } from '$lib';
   import { afterUpdate, tick } from 'svelte';
   import { fade } from 'svelte/transition';
+  import NavigationButton from '$lib/NavigationButton.svelte';
 
   let startTypewriter = false;
   let keyPress = '';
@@ -68,7 +69,7 @@
       remember my first time navigating the web and my first time playing around with an HTML page.
     </p>
 
-    <div class="mb-2 inline-block">
+    <div class="mb-4 inline-block">
       Nowadays, I work as a
       <div class="relative inline">
         <span
@@ -102,9 +103,8 @@
       </div>
       and my main focus is developing
       <span class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300">
-        complex UI elements
-      </span>
-      , implementing
+        complex UI elements</span
+      >, implementing
       <span class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300">
         business logic
       </span>
@@ -150,7 +150,7 @@
     <Keyboard pressedKey={keyPress} />
   </div>
 
-  <article class="mt-4 w-full max-w-xl">
+  <article class="w-full max-w-xl md:mt-4">
     <p class="flex items-center gap-1">
       Check out my
       <a
@@ -180,4 +180,6 @@
       </a>
     </p>
   </article>
+
+  <NavigationButton text="experience" link="/experience" />
 </section>
