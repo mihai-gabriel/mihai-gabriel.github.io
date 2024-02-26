@@ -6,3 +6,25 @@
   font-family: MovementV;
   src: url('/fonts/MovementV.ttf');
 }
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: #475569 transparent;
+    scrollbar-width: thin;
+  }
+}
+
+@supports selector(::-webkit-scrollbar) {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #475569;
+  }
+}

@@ -20,7 +20,7 @@
 
 <svelte:document />
 
-<div class="z-20 self-end px-0.5">
+<div class="z-20 translate-y-0.5">
   <button on:click={toggleTheme}>
     {#if theme !== 'light'}
       <svg
@@ -30,7 +30,7 @@
         fill="currentColor"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="h-8 w-8 text-yellow-500"
+        class="h-6 w-6 text-yellow-500 lg:h-7 lg:w-7 xl:h-8 xl:w-8"
       >
         <circle cx="12" cy="12" r="5"></circle>
         <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -51,7 +51,7 @@
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="h8 w-8 text-indigo-800"
+        class="h-6 w-6 text-indigo-800 lg:h-7 lg:w-7 xl:h-8 xl:w-8"
       >
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
       </svg>

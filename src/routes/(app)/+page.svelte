@@ -42,7 +42,7 @@
   });
 </script>
 
-<section class="relative flex flex-col items-center">
+<section class="relative flex flex-col items-center overflow-y-auto">
   <article class="max-w-xl leading-relaxed text-slate-700 dark:text-slate-300">
     <h2 class="mb-4 text-xl font-semibold dark:text-slate-200">About</h2>
     <p class="mb-4">
@@ -67,26 +67,28 @@
             >
               Frontend Developer
             </span>
-          {:else}
-            <span
-              class="select-none font-medium {spoiler
-                ? 'dark:bg-indigo-400 dark:text-indigo-400'
-                : ''}"
-              class:bg-indigo-800={spoiler}
-              class:text-indigo-800={spoiler}
-            >
+          {:else if !spoiler}
+            <!--            <span-->
+            <!--              class="select-none font-medium {spoiler-->
+            <!--                ? 'dark:bg-indigo-400 dark:text-indigo-400'-->
+            <!--                : ''}"-->
+            <!--              class:bg-indigo-800={spoiler}-->
+            <!--              class:text-indigo-800={spoiler}-->
+            <!--            >-->
+            <span class="font-medium hover:text-indigo-800 dark:hover:text-indigo-300">
               Frontend Developer
             </span>
           {/if}
         </div>
       </div>
       and my main focus is developing
-      <span class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300"
-        >complex UI elements</span
-      >, implementing
-      <span class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300"
-        >business logic</span
-      >
+      <span class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300">
+        complex UI elements
+      </span>
+      , implementing
+      <span class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300">
+        business logic
+      </span>
       and be a
       <span class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300">team member</span>.
     </div>
