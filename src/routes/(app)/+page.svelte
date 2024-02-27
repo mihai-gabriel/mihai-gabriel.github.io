@@ -70,7 +70,7 @@
     </p>
 
     <div class="mb-4 inline-block">
-      Nowadays, I work as a
+      I currently work as a
       <div class="relative inline">
         <span
           bind:this={backgroundText}
@@ -101,14 +101,14 @@
           {/if}
         </div>
       </div>
-      and my main focus is developing
+      , mainly focused on crafting
       <span class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300">
         complex UI elements</span
       >, implementing
       <span class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300">
         business logic
       </span>
-      and be a
+      and being a reliable
       <span class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300">team member</span>.
     </div>
     {#if startTypewriter}
