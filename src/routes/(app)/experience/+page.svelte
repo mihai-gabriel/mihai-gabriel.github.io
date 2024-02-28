@@ -2,7 +2,7 @@
   import NavigationButton from '$lib/NavigationButton.svelte';
 </script>
 
-<section class="relative flex flex-col space-y-6 overflow-y-auto">
+<section class="relative flex h-full flex-col space-y-6 overflow-hidden overflow-y-auto px-1">
   <article class="max-w-xl leading-relaxed text-slate-700 dark:text-slate-300">
     <h2 class="text-xl font-semibold dark:text-slate-200">Experience</h2>
     <p>
@@ -49,13 +49,16 @@
             React Query
           </span>
           <span class="font-lexend font-semibold text-indigo-500 dark:text-indigo-300">
+            Material UI
+          </span>
+          <span class="font-lexend font-semibold text-indigo-500 dark:text-indigo-300">
             Node.js
           </span>
           <span class="font-lexend font-semibold text-indigo-500 dark:text-indigo-300">
-            MongoDB
+            NestJS
           </span>
           <span class="font-lexend font-semibold text-indigo-500 dark:text-indigo-300">
-            Material UI
+            MongoDB
           </span>
         </div>
       </article>
@@ -120,4 +123,5 @@
     </div>
   </div>
   <NavigationButton text="projects" link="/projects" />
+  <div class="bg-diagonal dark:bg-diagonalDark w-full max-w-xl py-2" />
 </section>

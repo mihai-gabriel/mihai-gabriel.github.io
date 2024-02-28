@@ -1,34 +1,147 @@
 <script>
   import NavigationButton from '$lib/NavigationButton.svelte';
-  import ShuffleImages from '$lib/ShuffleImages.svelte';
   import ProjectModal from '$lib/ProjectModal.svelte';
+  import BugTrackerImage from '/src/lib/assets/bugtracker_01.webp?enhanced';
+  import QuizMakerImage from '/src/lib/assets/quizmaker_01.webp?enhanced';
+  import ChatroomsImage from '/src/lib/assets/chatrooms_01.webp?enhanced';
+  import GuessTheWordImage from '/src/lib/assets/guesstheword_01.webp?enhanced';
 
   let modalActive = false;
 </script>
 
-<section class="relative flex flex-col overflow-y-auto">
-  <article class="mb-4 max-w-xl leading-relaxed text-slate-700 dark:text-slate-300">
-    <h2 class="text-xl font-semibold dark:text-slate-200">Projects</h2>
-  </article>
+<section class="relative flex flex-col space-y-6 overflow-y-auto px-1">
   <article class="max-w-xl leading-relaxed text-slate-700 dark:text-slate-300">
-    <h2 class="text-xl font-semibold dark:text-slate-200">Bug Tracker</h2>
-    <p>A Jira-inspired web app for issue tracking, and priority management on a board.</p>
+    <h2 class="text-xl font-semibold dark:text-slate-200">Projects</h2>
+    <p>
+      Here's a list of personal projects that I've been working on in my spare time. Everything
+      available on GitHub.
+    </p>
   </article>
-  <!-- TODO: REMOVE THIS BUTTON -->
-  <button
-    class="mt-2 self-start rounded-md bg-indigo-900 px-8 py-2 text-slate-300 hover:bg-indigo-700 hover:text-slate-200 active:bg-indigo-500"
-    on:click={() => (modalActive = true)}
+  <article
+    class="flex max-w-xl flex-col gap-y-4 leading-relaxed text-slate-700 dark:text-slate-300"
   >
-    Click
-  </button>
-  <!--  <ShuffleImages-->
-  <!--    images={[-->
-  <!--      'https://plus.unsplash.com/premium_photo-1691223714409-b0cb1629f0f7?q=80&w=2120&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',-->
-  <!--      'https://plus.unsplash.com/premium_photo-1708834157582-631b565512eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'-->
-  <!--    ]}-->
-  <!--  />-->
+    <header>
+      <h2 class="text-xl font-semibold dark:text-slate-200">Bug Tracker</h2>
+      <p>A Jira-inspired web app for issue tracking, and priority management on a board.</p>
+    </header>
+    <div
+      class="dark:bg-diagonalDark bg-diagonal group relative flex w-full rounded-md transition-all"
+    >
+      <enhanced:img
+        src={BugTrackerImage}
+        alt="Bug tracker project showcase"
+        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 drop-shadow-xl transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none"
+      />
+    </div>
+    <div class="flex flex-row gap-2">
+      <p>Links:</p>
+      <a
+        href="https://github.com/mihai-gabriel/bugtracker"
+        class="font-semibold text-indigo-500 hover:text-indigo-700 dark:text-indigo-300 dark:hover:text-indigo-400"
+        target="_blank"
+      >
+        Github
+      </a>
+    </div>
+  </article>
+  <article
+    class="flex max-w-xl flex-col gap-y-4 leading-relaxed text-slate-700 dark:text-slate-300"
+  >
+    <header>
+      <h2 class="text-xl font-semibold dark:text-slate-200">Quiz Platform</h2>
+      <p>A quiz platform meant to be aiding a student present their Bachelor's degree project.</p>
+    </header>
+    <div
+      class="dark:bg-diagonalDark bg-diagonal group relative flex w-full rounded-md transition-all"
+    >
+      <enhanced:img
+        src={QuizMakerImage}
+        alt="Quiz platform project showcase"
+        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 drop-shadow-xl transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none"
+      />
+    </div>
+    <div class="flex flex-row gap-2">
+      <p>Links:</p>
+      <a
+        href="https://github.com/mihai-gabriel/quiz_project"
+        class="font-semibold text-indigo-500 hover:text-indigo-700 dark:text-indigo-300 dark:hover:text-indigo-400"
+        target="_blank"
+      >
+        Github
+      </a>
+      <a
+        href="https://quiz-maker-gab.netlify.app/"
+        class="ml-2 font-semibold text-indigo-500 hover:text-indigo-700 dark:text-indigo-300 dark:hover:text-indigo-400"
+        target="_blank"
+      >
+        Demo
+      </a>
+    </div>
+  </article>
+  <article
+    class="flex max-w-xl flex-col gap-y-4 leading-relaxed text-slate-700 dark:text-slate-300"
+  >
+    <header>
+      <h2 class="text-xl font-semibold dark:text-slate-200">Chatrooms</h2>
+      <p>Using WebSockets to create a real-time chat app similar to Messenger.</p>
+    </header>
+    <div
+      class="dark:bg-diagonalDark bg-diagonal group relative flex w-full rounded-md transition-all"
+    >
+      <enhanced:img
+        src={ChatroomsImage}
+        alt="Bug tracker project showcase"
+        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 drop-shadow-xl transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none"
+      />
+    </div>
+    <div class="flex flex-row gap-2">
+      <p>Links:</p>
+      <a
+        href="https://github.com/mihai-gabriel/chat-room"
+        class="font-semibold text-indigo-500 hover:text-indigo-700 dark:text-indigo-300 dark:hover:text-indigo-400"
+        target="_blank"
+      >
+        Github
+      </a>
+    </div>
+  </article>
+  <article
+    class="flex max-w-xl flex-col gap-y-4 leading-relaxed text-slate-700 dark:text-slate-300"
+  >
+    <header>
+      <h2 class="text-xl font-semibold dark:text-slate-200">Guess the word</h2>
+      <p>I was testing out Svelte by making a fancy UI for a mini-game. Try out the demo!</p>
+    </header>
+    <div
+      class="dark:bg-diagonalDark bg-diagonal group relative flex w-full rounded-md transition-all"
+    >
+      <enhanced:img
+        src={GuessTheWordImage}
+        alt="Bug tracker project showcase"
+        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 drop-shadow-xl transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none"
+      />
+    </div>
+    <div class="flex flex-row gap-2">
+      <p>Links:</p>
+      <a
+        href="https://github.com/mihai-gabriel/guess-the-word"
+        class="font-semibold text-indigo-500 hover:text-indigo-700 dark:text-indigo-300 dark:hover:text-indigo-400"
+        target="_blank"
+      >
+        Github
+      </a>
+      <a
+        href="https://guess-word-mihai.netlify.app/"
+        class="ml-2 font-semibold text-indigo-500 hover:text-indigo-700 dark:text-indigo-300 dark:hover:text-indigo-400"
+        target="_blank"
+      >
+        Demo
+      </a>
+    </div>
+  </article>
   {#if modalActive}
     <ProjectModal />
   {/if}
   <NavigationButton back={true} text="about" link="/" />
+  <div class="bg-diagonal dark:bg-diagonalDark w-full max-w-xl py-2" />
 </section>

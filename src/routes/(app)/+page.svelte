@@ -61,9 +61,9 @@
   });
 </script>
 
-<section class="relative flex flex-col items-center overflow-y-auto">
+<section class="relative flex flex-col items-center space-y-6 overflow-y-auto px-1">
   <article class="max-w-xl leading-relaxed text-slate-700 dark:text-slate-300">
-    <h2 class="mb-4 text-xl font-semibold dark:text-slate-200">About</h2>
+    <h2 class="text-xl font-semibold dark:text-slate-200">About</h2>
     <p class="mb-4">
       In my younger years, around the age of 10, I stumbled into the world of computers. I vividly
       remember my first time navigating the web and my first time playing around with an HTML page.
@@ -182,4 +182,5 @@
   </article>
 
   <NavigationButton text="experience" link="/experience" />
+  <div class="bg-diagonal dark:bg-diagonalDark w-full max-w-xl py-2" />
 </section>

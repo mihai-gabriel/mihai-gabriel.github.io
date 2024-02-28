@@ -12,7 +12,7 @@
   <a
     href="#"
     in:fly={{ delay: 400, opacity: 0, duration: 800, easing: cubicOut }}
-    class="absolute hidden self-end font-mplus font-bold tracking-[26px] opacity-40 [writing-mode:vertical-lr] hover:text-indigo-600 hover:opacity-90 md:block md:text-xl lg:text-2xl xl:text-3xl dark:text-slate-100 dark:hover:text-slate-200"
+    class="fixed hidden self-end font-mplus font-bold tracking-[26px] opacity-40 [writing-mode:vertical-lr] hover:text-indigo-600 hover:opacity-90 md:text-xl min-[864px]:block lg:text-2xl xl:text-3xl dark:text-slate-100 dark:hover:text-slate-200"
   >
     猫が大好きです
   </a>

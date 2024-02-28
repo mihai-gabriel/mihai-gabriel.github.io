@@ -2,7 +2,7 @@
   import { page } from '$app/stores';
 </script>
 
-<nav>
+<nav class="fixed mt-24">
   <ul
     class="mt-16 hidden min-w-44 font-lexend text-sm font-semibold uppercase text-slate-700 md:block md:space-y-4 lg:space-y-6 lg:text-lg xl:space-y-8 xl:text-xl dark:text-slate-100"
   >
