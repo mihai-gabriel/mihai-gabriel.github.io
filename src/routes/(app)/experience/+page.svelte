@@ -2,7 +2,7 @@
   import NavigationButton from '$lib/NavigationButton.svelte';
 </script>
 
-<section class="relative flex h-full flex-col space-y-6 overflow-hidden overflow-y-auto px-1">
+<section class="relative flex h-full flex-col space-y-6 overflow-hidden overflow-y-auto">
   <article class="max-w-xl leading-relaxed text-slate-700 dark:text-slate-300">
     <h2 class="text-xl font-semibold dark:text-slate-200">Experience</h2>
     <p>
@@ -123,5 +123,5 @@
     </div>
   </div>
   <NavigationButton text="projects" link="/projects" />
-  <div class="bg-diagonal dark:bg-diagonalDark w-full max-w-xl py-2" />
+  <div class="w-full max-w-xl bg-diagonal py-2 dark:bg-diagonalDark" />
 </section>

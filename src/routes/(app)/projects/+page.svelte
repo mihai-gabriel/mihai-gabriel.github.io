@@ -9,7 +9,7 @@
   let modalActive = false;
 </script>
 
-<section class="relative flex flex-col space-y-6 overflow-y-auto px-1">
+<section class="relative flex flex-col space-y-6 overflow-y-auto">
   <article class="max-w-xl leading-relaxed text-slate-700 dark:text-slate-300">
     <h2 class="text-xl font-semibold dark:text-slate-200">Projects</h2>
     <p>
@@ -25,12 +25,12 @@
       <p>A Jira-inspired web app for issue tracking, and priority management on a board.</p>
     </header>
     <div
-      class="dark:bg-diagonalDark bg-diagonal group relative flex w-full rounded-md transition-all"
+      class="group relative flex w-full rounded-md bg-diagonal px-0.5 transition-all dark:bg-diagonalDark"
     >
       <enhanced:img
         src={BugTrackerImage}
         alt="Bug tracker project showcase"
-        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 drop-shadow-xl transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none"
+        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none md:drop-shadow-xl"
       />
     </div>
     <div class="flex flex-row gap-2">
@@ -52,12 +52,12 @@
       <p>A quiz platform meant to be aiding a student present their Bachelor's degree project.</p>
     </header>
     <div
-      class="dark:bg-diagonalDark bg-diagonal group relative flex w-full rounded-md transition-all"
+      class="group relative flex w-full rounded-md bg-diagonal px-0.5 transition-all dark:bg-diagonalDark"
     >
       <enhanced:img
         src={QuizMakerImage}
         alt="Quiz platform project showcase"
-        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 drop-shadow-xl transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none"
+        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none md:drop-shadow-xl"
       />
     </div>
     <div class="flex flex-row gap-2">
@@ -86,12 +86,12 @@
       <p>Using WebSockets to create a real-time chat app similar to Messenger.</p>
     </header>
     <div
-      class="dark:bg-diagonalDark bg-diagonal group relative flex w-full rounded-md transition-all"
+      class="group relative flex w-full rounded-md bg-diagonal px-0.5 transition-all dark:bg-diagonalDark"
     >
       <enhanced:img
         src={ChatroomsImage}
         alt="Bug tracker project showcase"
-        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 drop-shadow-xl transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none"
+        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none md:drop-shadow-xl"
       />
     </div>
     <div class="flex flex-row gap-2">
@@ -113,12 +113,12 @@
       <p>I was testing out Svelte by making a fancy UI for a mini-game. Try out the demo!</p>
     </header>
     <div
-      class="dark:bg-diagonalDark bg-diagonal group relative flex w-full rounded-md transition-all"
+      class="group relative flex w-full rounded-md bg-diagonal px-0.5 transition-all dark:bg-diagonalDark"
     >
       <enhanced:img
         src={GuessTheWordImage}
         alt="Bug tracker project showcase"
-        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 drop-shadow-xl transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none"
+        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none md:drop-shadow-xl"
       />
     </div>
     <div class="flex flex-row gap-2">
@@ -143,5 +143,5 @@
     <ProjectModal />
   {/if}
   <NavigationButton back={true} text="about" link="/" />
-  <div class="bg-diagonal dark:bg-diagonalDark w-full max-w-xl py-2" />
+  <div class="w-full max-w-xl bg-diagonal py-2 dark:bg-diagonalDark" />
 </section>

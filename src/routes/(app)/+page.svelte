@@ -61,7 +61,7 @@
   });
 </script>
 
-<section class="relative flex flex-col items-center space-y-6 overflow-y-auto px-1">
+<section class="relative flex flex-col items-center space-y-6 overflow-y-auto">
   <article class="max-w-xl leading-relaxed text-slate-700 dark:text-slate-300">
     <h2 class="text-xl font-semibold dark:text-slate-200">About</h2>
     <p class="mb-4">
@@ -182,5 +182,5 @@
   </article>
 
   <NavigationButton text="experience" link="/experience" />
-  <div class="bg-diagonal dark:bg-diagonalDark w-full max-w-xl py-2" />
+  <div class="w-full max-w-xl bg-diagonal py-2 dark:bg-diagonalDark" />
 </section>
