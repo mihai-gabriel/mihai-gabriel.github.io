@@ -49,7 +49,7 @@
   >
     <header>
       <h2 class="text-xl font-semibold dark:text-slate-200">Quiz Platform</h2>
-      <p>A quiz platform meant to be aiding a student present their Bachelor's degree project.</p>
+      <p>A quiz platform meant to create quizzes and be used to evaluate students in a clasroom.</p>
     </header>
     <div
       class="group relative flex w-full rounded-md bg-diagonal px-0.5 transition-all dark:bg-diagonalDark"
