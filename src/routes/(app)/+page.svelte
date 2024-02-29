@@ -76,7 +76,7 @@
           bind:this={backgroundText}
           class="font-medium hover:text-indigo-600 md:opacity-30 dark:hover:text-indigo-300"
         >
-          Frontend Developer
+          Full-stack Developer
         </span>
         <div class="absolute -top-0.5 left-0">
           {#if startTypewriter}
@@ -85,7 +85,7 @@
               class="font-medium hover:text-indigo-600 dark:hover:text-indigo-300"
               in:typewriter
             >
-              Frontend Developer
+              Full-stack Developer
             </span>
           {:else if !spoiler}
             <!--            <span-->
@@ -96,7 +96,7 @@
             <!--              class:text-indigo-800={spoiler}-->
             <!--            >-->
             <span class="font-medium hover:text-indigo-800 dark:hover:text-indigo-300">
-              Frontend Developer
+              Full-stack Developer
             </span>
           {/if}
         </div>

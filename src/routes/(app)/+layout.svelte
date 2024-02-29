@@ -17,7 +17,7 @@
       <div class="flex flex-1 flex-col items-start space-y-1 rounded-xl">
         <Title text="Mihai Gabriel" />
         <h2 class="font-space font-light tracking-tight md:text-lg xl:text-2xl dark:text-slate-300">
-          Frontend Developer
+          Full-stack Developer
         </h2>
       </div>
       <MobileNavigation />

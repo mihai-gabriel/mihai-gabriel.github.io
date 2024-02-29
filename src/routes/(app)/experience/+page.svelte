@@ -26,7 +26,9 @@
       </p>
       <article>
         <p class="py-1 text-sm text-slate-800 md:hidden dark:text-slate-300">APR 2022 — PRESENT</p>
-        <h4 class="text-lg font-semibold dark:text-white">Frontend Developer &bullet; Rebeldot</h4>
+        <h4 class="text-lg font-semibold dark:text-white">
+          Full-stack Developer &bullet; Rebeldot
+        </h4>
         <p>
           As a developer, I excel in delivering web solutions under tight deadlines, creating
           captivating UI components, and refactoring key project elements. I've successfully
