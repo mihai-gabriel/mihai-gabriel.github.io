@@ -13,7 +13,7 @@
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 496 512"
-      class="h-5 w-5 lg:h-6 lg:w-6"
+      class="size-5 lg:size-6"
       fill="currentColor"
     >
       <path
@@ -32,7 +32,7 @@
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 448 512"
-      class="h-5 w-5 lg:h-6 lg:w-6"
+      class="size-5 lg:size-6"
       fill="currentColor"
     >
       <path
@@ -52,7 +52,7 @@
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 30"
-      class="h-5 w-5 lg:h-6 lg:w-6"
+      class="size-5 lg:size-6"
       fill="currentColor"
     >
       <path

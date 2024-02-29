@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: MovementV;
-  src: url('/fonts/MovementV.ttf');
-}
-
 @supports not selector(::-webkit-scrollbar) {
   body {
     scrollbar-color: #475569 transparent;

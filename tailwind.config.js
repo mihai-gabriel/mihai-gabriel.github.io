@@ -7,9 +7,7 @@ export default {
       fontFamily: {
         lexend: ['"Lexend Deca"', 'sans-serif'],
         space: ['"Space Grotesk"', 'sans-serif'],
-        movement: ['MovementV', 'sans-serif'],
-        mplus: ['"M PLUS 1"', 'sans-serif'],
-        dancing: ['"Dancing Script"', 'cursive']
+        mplus: ['"M PLUS 1"', 'sans-serif']
       },
       backgroundImage: {
         diagonal:

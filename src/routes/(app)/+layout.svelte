@@ -16,7 +16,7 @@
     <div class="mb-10 flex flex-row md:fixed md:mb-0">
       <div class="flex flex-1 flex-col items-start space-y-1 rounded-xl">
         <Title text="Mihai Gabriel" />
-        <h2 class="font-space font-light tracking-tight md:text-lg xl:text-2xl dark:text-slate-300">
+        <h2 class="font-space font-light tracking-tight md:text-lg lg:text-xl dark:text-slate-300">
           Full-stack Developer
         </h2>
       </div>
@@ -28,9 +28,8 @@
     <div class="flex flex-col space-x-0 md:flex-row md:space-x-10">
       <Navigation />
       <div
-        class="flex h-full w-full justify-center pb-10 pl-0 md:pl-44 lg:pl-36 dark:text-slate-200"
+        class="flex h-full w-full justify-center pb-10 pl-0 md:pl-44 lg:pl-32 dark:text-slate-200"
       >
-        <!--         md:-mt-[64px] lg:-mt-[68px] xl:-mt-[80px]-->
         <slot />
       </div>
     </div>

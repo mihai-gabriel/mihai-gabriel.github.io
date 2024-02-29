@@ -25,7 +25,7 @@
 
 {#if beforeMount}
   <div
-    out:fade={{ duration: 200 }}
+    out:fade={{ duration: 100 }}
     class="fixed left-0 top-0 z-50 flex h-lvh w-lvw items-center justify-center bg-indigo-900 text-white"
   >
     <h2 class="font-space text-2xl">Loading...</h2>
