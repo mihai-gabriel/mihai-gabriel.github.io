@@ -15,6 +15,33 @@
 </script>
 
 <svelte:head>
+  <!-- TODO: Provide a different title for every page -->
+  <meta name="title" content="Mihai Șucaliuc — Personal website" />
+  <meta
+    name="description"
+    content="Personal website where I link all of my socials and provide a description of my experience and projects that I've worked on. This should work well on mobile too!"
+  />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mihaigabriel.dev/" />
+  <meta property="og:title" content="Mihai Șucaliuc — Personal website" />
+  <meta
+    property="og:description"
+    content="Personal website where I link all of my socials and provide a description of my experience and projects that I've worked on. This should work well on mobile too!"
+  />
+  <meta property="og:image" content="https://mihaigabriel.dev/preview.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://mihaigabriel.dev/" />
+  <meta property="twitter:title" content="Mihai Șucaliuc — Personal website" />
+  <meta
+    property="twitter:description"
+    content="Personal website where I link all of my socials and provide a description of my experience and projects that I've worked on. This should work well on mobile too!"
+  />
+  <meta property="twitter:image" content="https://mihaigabriel.dev/preview.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
