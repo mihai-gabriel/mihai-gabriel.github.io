@@ -2,7 +2,7 @@
   import NavigationButton from '$lib/NavigationButton.svelte';
 </script>
 
-<section class="relative flex h-full flex-col space-y-6 overflow-hidden overflow-y-auto">
+<section class="relative flex h-full flex-col space-y-6">
   <article class="max-w-xl leading-relaxed text-slate-700 dark:text-slate-300">
     <h2 class="text-xl font-semibold dark:text-slate-200">Experience</h2>
     <p>

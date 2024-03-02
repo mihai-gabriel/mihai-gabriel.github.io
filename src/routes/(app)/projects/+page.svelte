@@ -1,15 +1,12 @@
 <script>
   import NavigationButton from '$lib/NavigationButton.svelte';
-  import ProjectModal from '$lib/ProjectModal.svelte';
   import BugTrackerImage from '/src/lib/assets/bugtracker_01.webp?enhanced';
   import QuizMakerImage from '/src/lib/assets/quizmaker_01.webp?enhanced';
   import ChatroomsImage from '/src/lib/assets/chatrooms_01.webp?enhanced';
   import GuessTheWordImage from '/src/lib/assets/guesstheword_01.webp?enhanced';
-
-  let modalActive = false;
 </script>
 
-<section class="relative flex flex-col space-y-6 overflow-y-auto">
+<section class="relative flex flex-col space-y-6">
   <article class="max-w-xl leading-relaxed text-slate-700 dark:text-slate-300">
     <h2 class="text-xl font-semibold dark:text-slate-200">Projects</h2>
     <p>
@@ -139,9 +136,6 @@
       </a>
     </div>
   </article>
-  {#if modalActive}
-    <ProjectModal />
-  {/if}
   <NavigationButton back={true} text="about" link="/" />
   <div class="w-full max-w-xl bg-diagonal py-2 dark:bg-diagonalDark" />
 </section>

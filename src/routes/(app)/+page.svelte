@@ -61,7 +61,7 @@
   });
 </script>
 
-<section class="relative flex flex-col items-center space-y-6 overflow-y-auto">
+<section class="relative flex flex-col items-center space-y-6">
   <article class="max-w-xl leading-relaxed text-slate-700 dark:text-slate-300">
     <h2 class="text-xl font-semibold dark:text-slate-200">About</h2>
     <p class="mb-4">
