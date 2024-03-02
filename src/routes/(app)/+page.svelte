@@ -1,18 +1,15 @@
 <script>
   import Keyboard from '$lib/Keyboard.svelte';
+  import NavigationButton from '$lib/NavigationButton.svelte';
+
   import { typewriter } from '$lib';
   import { afterUpdate, tick } from 'svelte';
-  import { fade } from 'svelte/transition';
-  import NavigationButton from '$lib/NavigationButton.svelte';
 
   let startTypewriter = false;
   let keyPress = '';
-  let spoiler = true;
+  let firstTimeFiring = true;
 
-  /** @type {HTMLElement | null} */
   let typewriterOverlay = null;
-
-  /** @type {HTMLElement | null} */
   let backgroundText = null;
 
   const stopTypewriting = () => {
@@ -45,7 +42,7 @@
     const observer = new MutationObserver(() => {
       if (typewriterOverlay && backgroundText) {
         keyPress = typewriterOverlay.textContent?.at(-1) ?? '';
-        spoiler = false;
+        firstTimeFiring = false;
 
         if (typewriterOverlay.textContent?.length === backgroundText.textContent?.length) {
           stopTypewriting();
@@ -87,14 +84,7 @@
             >
               Full-stack Developer
             </span>
-          {:else if !spoiler}
-            <!--            <span-->
-            <!--              class="select-none font-medium {spoiler-->
-            <!--                ? 'dark:bg-indigo-400 dark:text-indigo-400'-->
-            <!--                : ''}"-->
-            <!--              class:bg-indigo-800={spoiler}-->
-            <!--              class:text-indigo-800={spoiler}-->
-            <!--            >-->
+          {:else if !firstTimeFiring}
             <span class="font-medium hover:text-indigo-800 dark:hover:text-indigo-300">
               Full-stack Developer
             </span>
@@ -128,7 +118,7 @@
     {:else}
       <button
         class="hidden items-center gap-2 [animation-iteration-count:2] md:flex"
-        class:animate-pulse={spoiler}
+        class:animate-pulse={firstTimeFiring}
         on:click={() => (startTypewriter = true)}
       >
         <svg

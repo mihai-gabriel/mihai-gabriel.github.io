@@ -27,7 +27,7 @@
       <enhanced:img
         src={BugTrackerImage}
         alt="Bug tracker project showcase"
-        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none md:drop-shadow-xl"
+        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 drop-shadow-none transition-all group-hover:scale-105"
       />
     </div>
     <div class="flex flex-row gap-2">
@@ -54,7 +54,7 @@
       <enhanced:img
         src={QuizMakerImage}
         alt="Quiz platform project showcase"
-        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none md:drop-shadow-xl"
+        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 drop-shadow-none transition-all group-hover:scale-105"
       />
     </div>
     <div class="flex flex-row gap-2">
@@ -88,7 +88,7 @@
       <enhanced:img
         src={ChatroomsImage}
         alt="Bug tracker project showcase"
-        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none md:drop-shadow-xl"
+        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 drop-shadow-none transition-all group-hover:scale-105"
       />
     </div>
     <div class="flex flex-row gap-2">
@@ -115,7 +115,7 @@
       <enhanced:img
         src={GuessTheWordImage}
         alt="Bug tracker project showcase"
-        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 transition-all group-hover:-translate-y-4 group-hover:drop-shadow-none md:drop-shadow-xl"
+        class="z-10 max-w-full rounded-md outline outline-2 outline-indigo-400 drop-shadow-none transition-all group-hover:scale-105"
       />
     </div>
     <div class="flex flex-row gap-2">
