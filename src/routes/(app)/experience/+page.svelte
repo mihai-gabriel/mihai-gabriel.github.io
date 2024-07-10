@@ -22,7 +22,32 @@
       <p
         class="hidden min-w-36 text-nowrap py-1 text-sm text-slate-800 md:block dark:text-slate-300"
       >
-        APR 2022 — PRESENT
+        JUN 2024 — PRESENT
+      </p>
+      <article>
+        <p class="py-1 text-sm text-slate-800 md:hidden dark:text-slate-300">APR 2022 — PRESENT</p>
+        <h4 class="text-lg font-semibold dark:text-white">
+          Full-stack Developer &bullet; Golf Genius Software
+        </h4>
+        <p>FILL_IN</p>
+        <div class="mt-2 flex flex-row flex-wrap gap-x-3.5 gap-y-0.5 text-sm tracking-tight">
+          <span class="font-lexend font-semibold text-indigo-500 dark:text-indigo-300">
+            Javascript
+          </span>
+          <span class="font-lexend font-semibold text-indigo-500 dark:text-indigo-300">
+            React
+          </span>
+          <span class="font-lexend font-semibold text-indigo-500 dark:text-indigo-300">
+            Ruby on Rails
+          </span>
+        </div>
+      </article>
+    </div>
+    <div class="flex max-w-xl flex-row md:space-x-6">
+      <p
+        class="hidden min-w-36 text-nowrap py-1 text-sm text-slate-800 md:block dark:text-slate-300"
+      >
+        APR 2022 — JUN 2024
       </p>
       <article>
         <p class="py-1 text-sm text-slate-800 md:hidden dark:text-slate-300">APR 2022 — PRESENT</p>

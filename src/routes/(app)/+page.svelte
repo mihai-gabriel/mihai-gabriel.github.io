@@ -61,10 +61,6 @@
 <section class="relative flex flex-col items-center space-y-6">
   <article class="max-w-xl leading-relaxed text-slate-700 dark:text-slate-300">
     <h2 class="text-xl font-semibold dark:text-slate-200">About</h2>
-    <p class="mb-4">
-      In my younger years, around the age of 10, I stumbled into the world of computers. I vividly
-      remember my first time navigating the web and my first time playing around with an HTML page.
-    </p>
 
     <div class="mb-4 inline-block">
       I currently work as a
